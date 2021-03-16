@@ -35,4 +35,5 @@ Type value should be either "Credit" or "Debit" and it is case sensitive.
 - "atm.account.result" is the our result topic.
 - "atm.account.refused" contains failed trasactions
 
-# TODO - Do Stress Testing
+# TODo
+Do Stress Testing
