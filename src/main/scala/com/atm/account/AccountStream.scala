@@ -13,20 +13,9 @@ import org.apache.kafka.streams.{KafkaStreams, StreamsBuilder, StreamsConfig}
 object AccountStream{
   var invariances: AccountService = _
   var balanceByAccountStore: ReadOnlyKeyValueStore[String, Double] = _
-//  import org.apache.kafka.common.serialization.Serde
-//  val stringSerde = Serdes.String
-//  val longSerde: Serde[lang.Double] = Serdes.Double
 
   def startStreams(props: Properties): Unit = {
     props.put(StreamsConfig.APPLICATION_ID_CONFIG, "account-stream")
-//    val props: Properties = {
-//      val p = new Properties()
-//      p.put(StreamsConfig.APPLICATION_ID_CONFIG, "account-stream")
-//      p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
-//      p.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, classOf[Serdes.StringSerde])
-//      p.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, classOf[JsonSerdes])
-//      p
-//    }
 
     val builder = new StreamsBuilder
     val branches: Array[KStream[String, JsonNode]] = builder
